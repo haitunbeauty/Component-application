@@ -37,7 +37,7 @@ import java.util.zip.ZipInputStream;
  * @date 2019/12/5
  * @Describe  热更新的签名安装包我上传了我的阿里云  可以下载安装测试
  * path ；https://lb-apk-package.oss-cn-chengdu.aliyuncs.com/zip_file/hotFixBugTest.apk?Expires=1575532414&OSSAccessKeyId=TMP.hhgdqbTd3fyfCiHxe1yVa2XKagSzCqPGgEjFGunvzWKJiGxfC8dU9A9n1gtEube2QUaREyqufA9A1TTz5aRHBEgFGD8HrEczyqtjVVnwXqxRoSS5n4P8VwF7koAaiR.tmp&Signature=YsP99q8wwxzUvJCqIXFBitZdN4c%3D
- *
+ * github项目托管地址 : https://github.com/haitunbeauty/Component-application.git 可以clone下来使用
  */
 public class HomeFragment extends Fragment implements View.OnClickListener {
 
@@ -95,7 +95,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private void repair() {
         //TODO 1、下载zip文件
-        AndroidNetworking.download("https://lb-apk-package.oss-cn-chengdu.aliyuncs.com/zip_file/hotFixBugTest.zip?Expires=1575529580&OSSAccessKeyId=TMP.hhgdqbTd3fyfCiHxe1yVa2XKagSzCqPGgEjFGunvzWKJiGxfC8dU9A9n1gtEube2QUaREyqufA9A1TTz5aRHBEgFGD8HrEczyqtjVVnwXqxRoSS5n4P8VwF7koAaiR.tmp&Signature=i35zALaT5F9RyljGNGNrqgWduP4%3D",patchDir.getPath(),"dexfile.zip")
+        AndroidNetworking.download("https://lb-apk-package.oss-cn-chengdu.aliyuncs.com/zip_file/hotFixBugTest.zip",patchDir.getPath(),"dexfile.zip")
                 .setTag("downloadTest")
                 .setPriority(Priority.MEDIUM)
                 .build()

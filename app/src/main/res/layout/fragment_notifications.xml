@@ -1,19 +1,115 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text_notifications"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/header_content_cl"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/colorPrimary">
+                <View
+                    android:id="@+id/zhan_wei_v"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/setting_tv"
+                    app:layout_constraintTop_toTopOf="parent"></View>
+                <ImageView
+                    android:id="@+id/setting_tv"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:padding="10dp"
+                    app:layout_constraintStart_toEndOf="@+id/zhan_wei_v"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:gravity="right|center_vertical"
+                    android:src="@mipmap/ic_person_center_setting"
+                    ></ImageView>
+
+                <ImageView
+                    android:id="@+id/avator_iv"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/name_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/zhan_wei_v"
+                    android:src="@mipmap/ic_person_center_setting"
+                    ></ImageView>
+                <TextView
+                    android:id="@+id/name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/avator_iv"
+                    app:layout_constraintEnd_toStartOf="@id/position_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/zhan_wei_v"
+                    android:text="其木木"></TextView>
+                <TextView
+                    android:id="@+id/position_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@id/name_tv"
+                    app:layout_constraintEnd_toStartOf="@+id/id_tv"
+                    app:layout_constraintTop_toBottomOf="@id/zhan_wei_v"
+                    android:text="你好啊"></TextView>
+                <TextView
+                    android:id="@+id/id_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toEndOf="@+id/position_tv"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/zhan_wei_v"
+                    android:text="你好啊"></TextView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/content_cl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/header_content_cl"
+                android:background="@color/white">
+                <ListView
+                    android:id="@+id/memu_lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="600dp"
+                    android:dividerHeight="0.5dp"
+                    android:layout_marginTop="100dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+                </ListView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <FrameLayout
+                android:id="@+id/content_menu_fl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="100dp">
+                <View
+                    android:layout_width="350dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@mipmap/ic_content_menu_bg"></View>
+            </FrameLayout>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
